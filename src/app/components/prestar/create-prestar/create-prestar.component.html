@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>
+        Formulario de agregar Prestar
+    </h1>
+    <form [formGroup]="formulario" novalidate (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Fecha de prestamo</mat-label>
+                <input matInput placeholder="Fecha de prestamo" formControlName="fecha_pres" required>
+              </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Fecha de devolucion</mat-label>
+                <input matInput placeholder="Fecha de devolucion" formControlName="fecha_dev" required>
+              </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>ID de Usuario</mat-label>
+                <input matInput placeholder="UsuarioId" formControlName="UsuarioId" required>
+              </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>ID de Ejemplar</mat-label>
+                <input matInput placeholder="EjemplarId" formControlName="EjemplarId" required>
+              </mat-form-field>
+        </div>
+
+        <div>
+            <button type="submit" mat-button [disabled]="formulario.invalid">Crear Libro</button>
+        </div>
+    </form>
+</div>

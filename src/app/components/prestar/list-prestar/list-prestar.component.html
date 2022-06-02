@@ -1,0 +1,50 @@
+<table mat-table [dataSource]="prestamos" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fecha_pres">
+        <th mat-header-cell *matHeaderCellDef> Fecha de prestamo </th>
+        <td mat-cell *matCellDef="let element"> {{element.fecha_pres}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fecha_dev">
+        <th mat-header-cell *matHeaderCellDef> Fecha de devolucion </th>
+        <td mat-cell *matCellDef="let element"> {{element.fecha_dev}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="UsuarioId">
+        <th mat-header-cell *matHeaderCellDef> ID de Usuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.UsuarioId}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="EjemplarId">
+        <th mat-header-cell *matHeaderCellDef> ID de Ejemplar </th>
+        <td mat-cell *matCellDef="let element"> {{element.EjemplarId}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-icon-button aria-label="Example icon button with a home icon" color="primary">
+                <mat-icon>edit</mat-icon>
+            </button>
+
+            <button mat-icon-button aria-label="Example icon button with a home icon" color="warn">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+

@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>
+        Formulario de agregar Autores
+    </h1>
+    <form [formGroup]="formulario" novalidate (ngSubmit)="onSubmit()">
+
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Nombre de Autor</mat-label>
+                <input matInput placeholder="Nombre" formControlName="nombre" required>
+              </mat-form-field>
+        </div>
+
+        <div>
+            <button type="submit" mat-button color="primary" [disabled]="formulario.invalid">Crear Registro</button>
+        </div>
+    </form>
+</div>

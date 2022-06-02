@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>
+        Formulario de agregar libros
+    </h1>
+    <form [formGroup]="formulario" novalidate (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Titulo del libro</mat-label>
+                <input matInput placeholder="Titulo del libro" formControlName="titulo" required>
+              </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Numero de paginas</mat-label>
+                <input matInput placeholder="Numero de paginas" formControlName="numero_pag" required>
+              </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Editorial</mat-label>
+                <input matInput placeholder="Editorial" formControlName="editorial" required>
+              </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>ISBN del libro</mat-label>
+                <input matInput placeholder="ISBN del libro" formControlName="ISBN" required>
+              </mat-form-field>
+        </div>
+
+        <div>
+            <button type="submit" mat-button [disabled]="formulario.invalid">Crear Libro</button>
+        </div>
+    </form>
+</div>

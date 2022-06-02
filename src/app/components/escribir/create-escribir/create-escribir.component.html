@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>
+        Formulario de Escribir
+    </h1>
+    <form [formGroup]="formulario" novalidate (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Fecha</mat-label>
+                <input matInput placeholder="Fecha" formControlName="Fecha" required>
+              </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Id de Autor</mat-label>
+                <input matInput placeholder="Id de Autor" formControlName="AutorId" required>
+              </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Id de Libro</mat-label>
+                <input matInput placeholder="Id de Libro" formControlName="LibroId" required>
+              </mat-form-field>
+        </div>
+
+        <div>
+            <button type="submit" mat-button color="primary" [disabled]="formulario.invalid">Crear Registro</button>
+        </div>
+    </form>
+</div>
